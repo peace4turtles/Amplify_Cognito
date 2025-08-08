@@ -6,15 +6,20 @@ frontend:
         - echo "Installing root dependencies..."
         - npm ci
         - echo "Installing app dependencies..."
-        - cd app && npm ci
+        - cd /workspace/app && npm ci
     build:
       commands:
         - echo "Building the application..."
-        - cd app && npm run build:config
-        - cd app && next build
-        - cd app && next export
+        - echo "Current directory:" && pwd
+        - echo "Listing files:" && ls -la
+        - echo "Changing to app directory and building..."
+        - |
+          cd /workspace/app
+          npm run build:config
+          next build
+          next export
   artifacts:
-    baseDirectory: app/out
+    baseDirectory: /workspace/app/out
     files:
       - '**/*'
   cache:
