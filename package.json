@@ -1,14 +1,25 @@
 {
+  "name": "nextjs-authentication-ui-using-amplify-ui-with-cognito",
+  "version": "1.0.0",
+  "description": "Next.js Authentication UI using Amplify UI Components with Cognito",
   "dependencies": {
     "@types/aws-lambda": "^8.10.92",
     "@types/node": "^17.0.19",
+    "aws-amplify": "^6.15.5",
     "aws-cdk": "^2.13.0",
-    "aws-cdk-lib": "^2.13.0",
     "aws-lambda": "^1.0.7",
-    "cdk-remote-stack": "^2.0.8",
-    "esbuild": "^0.14.23"
+    "cdk-remote-stack": "^2.0.8"
   },
   "scripts": {
     "build": "cd app && npm run build"
+  },
+  "devDependencies": {
+    "@aws-amplify/backend": "^1.16.1",
+    "@aws-amplify/backend-cli": "^1.8.0",
+    "aws-cdk-lib": "^2.204.0",
+    "constructs": "^10.4.2",
+    "esbuild": "^0.25.8",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
   }
 }
