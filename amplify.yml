@@ -6,11 +6,10 @@ frontend:
         - echo "Installing root dependencies..."
         - npm ci
         - echo "Installing app dependencies..."
-        - cd app
-        - npm ci
+        - cd app && npm ci
         - echo "Creating environment configuration..."
         - |
-          cat > public/env.json << EOF
+          cd app && cat > public/env.json << EOF
           {
             "cognitoUserPoolId": "${NEXT_PUBLIC_AUTH_USER_POOL_ID:-PLACEHOLDER_USER_POOL_ID}",
             "cognitoUserPoolWebClientId": "${NEXT_PUBLIC_AUTH_WEB_CLIENT_ID:-PLACEHOLDER_CLIENT_ID}"
@@ -19,10 +18,9 @@ frontend:
     build:
       commands:
         - echo "Building the application..."
-        - cd app
-        - npm run build:config
-        - next build
-        - next export
+        - cd app && npm run build:config
+        - cd app && next build
+        - cd app && next export
   artifacts:
     baseDirectory: app/out
     files:
