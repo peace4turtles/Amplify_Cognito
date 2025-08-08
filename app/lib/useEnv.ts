@@ -21,8 +21,8 @@ export default function useEnv() {
   if (dev || !env) {
     return {
       env: Object.freeze({
-        cognitoUserPoolId: "us-east-2_6ZwxbaLGO",
-        cognitoUserPoolWebClientId: "t02309fp0efqg5jnesnmbnudk",
+        cognitoUserPoolId: process.env.NEXT_PUBLIC_AUTH_USER_POOL_ID || "us-east-2_6ZwxbaLGO",
+        cognitoUserPoolWebClientId: process.env.NEXT_PUBLIC_AUTH_WEB_CLIENT_ID || "t02309fp0efqg5jnesnmbnudk",
       }) as Env,
     }
   }
